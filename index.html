@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Shooter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <header id="hud">
+      <div class="hud-card">
+        <span class="hud-label">SKOR</span>
+        <span class="hud-val" id="sv">0</span>
+      </div>
+      <div class="hud-card hud-center">
+        <span class="hud-label">NYAWA</span>
+        <span class="hud-val" id="lv">❤️❤️❤️</span>
+      </div>
+      <div class="hud-card">
+        <span class="hud-label">LEVEL</span>
+        <span class="hud-val" id="lvv">1</span>
+      </div>
+    </header>
+
+    <div id="canvas-wrap">
+      <canvas id="gc"></canvas>
+      <div id="cpop" aria-live="polite"></div>
+
+      <div id="overlay" class="visible">
+        <h1 class="game-title">COLOR<br>SHOOTER</h1>
+        <div class="instructions">
+          <p>Musuh turun dari atas.</p>
+          <p>Ganti warna pakai <kbd>←</kbd> <kbd>→</kbd></p>
+          <p>Tembak pakai <kbd>↑</kbd> atau <kbd>Spasi</kbd></p>
+          <p class="danger">Salah warna = Game Over!</p>
+        </div>
+        <button id="sbstart" class="start-btn">MULAI</button>
+      </div>
+    </div>
+
+    <div id="color-dots" aria-label="Pilihan warna"></div>
+
+    <div id="controls">
+      <button class="cbtn" id="btn-left" aria-label="Warna sebelumnya">&#8592;</button>
+      <button class="cbtn shoot-btn" id="btn-shoot" aria-label="Tembak">&#8593;</button>
+      <button class="cbtn" id="btn-right" aria-label="Warna berikutnya">&#8594;</button>
+    </div>
+  </div>
+
+  <script src="js/colors.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/entities.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/input.js"></script>
+</body>
+</html>
