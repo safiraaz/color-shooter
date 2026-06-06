@@ -196,8 +196,11 @@ function loop() {
 document.getElementById('sbstart').addEventListener('click', startGame);
 window.addEventListener('resize', () => {
   resize();
-  if (!state.running) renderFrame(ctx, W || 300, H || 400, (W||300)/2, (H||400)-52, state.colorIdx, 0);
+  if (!state.running) renderFrame(ctx, W, H, SHOOTER_X, SHOOTER_Y, state.colorIdx, 0);
 });
 
-resize();
-buildColorDots();
+// Tunggu layout selesai baru resize supaya W/H akurat
+requestAnimationFrame(() => {
+  resize();
+  buildColorDots();
+});
