@@ -7,8 +7,7 @@ const bullets = [];
 
 function spawnEnemy(W, baseSpeed, level) {
   const ci = Math.floor(Math.random() * COLORS.length);
-  const margin = 28;
-  const x = margin + Math.random() * (W - margin * 2);
+  const x = W / 2; // satu jalur di tengah
   const speed = baseSpeed + (level - 1) * 0.28;
   enemies.push({ x, y: -24, ci, speed });
 }
